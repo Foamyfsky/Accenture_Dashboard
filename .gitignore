@@ -1,0 +1,10 @@
+.venv/
+__pycache__/
+*.py[cod]
+.DS_Store
+.streamlit/secrets.toml
+employees.csv
+attrition_log.csv
+performance.csv
+engagement.csv
+*.ipynb

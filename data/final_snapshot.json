@@ -1,0 +1,344 @@
+{
+  "metadata": {
+    "title": "NovaCorp Decision Lab",
+    "version": "final-story-1",
+    "window": "CY2024–CY2025",
+    "currency": "A$",
+    "notebook_sha256": "4d6372ec6e4b93e8c6c9da9e723b65f421ab9f4d34470366e4dc28b0b7cc3068",
+    "source": "NovaCorp_Story.ipynb and four original source tables",
+    "public_data": "Aggregate only"
+  },
+  "finance": {
+    "reported_total_m": 42.0,
+    "rebuilt_total_m": 45.879404,
+    "regrettable_m": 27.525146,
+    "disengagement_finance_m": 13.10226,
+    "disengagement_observed_m": 0.53341,
+    "hiring_m": 5.251998,
+    "genuine_exits_2y": 341,
+    "definition": "Voluntary + employee-initiated pull + Outstanding / High Performer / HiPo",
+    "replacement_formula": "Salary at exit × 1.5 × 85% backfill, annualised",
+    "disengagement_gap_pct": 0.61067,
+    "disengagement_p": 0.192132
+  },
+  "workforce": {
+    "employees": 13403,
+    "active": 12003,
+    "voluntary": 1133,
+    "push": 688,
+    "pull": 445
+  },
+  "measurement": {
+    "tp": 118,
+    "fn": 223,
+    "fp": 35,
+    "recall_pct": 34.604106,
+    "precision_pct": 77.124183,
+    "seen_m": 9.711802,
+    "missed_m": 17.813344,
+    "old_reviews_pa": 76.5,
+    "new_reviews_pa": 170.5
+  },
+  "warning": {
+    "headline_last_z": -0.120196,
+    "stayer_last_z": -0.004824,
+    "p_value": 0.082147,
+    "headline_own_change": -0.011268,
+    "stayer_own_change": -0.019594,
+    "pre_exit_coverage": 272,
+    "headline_pct": 84.265734,
+    "push_pct": 54.351687,
+    "stayers_pct": 80.45157
+  },
+  "drivers": {
+    "historical": [
+      {
+        "code": "C",
+        "name": "HiPo career friction",
+        "exits_2y": 105,
+        "cost_m": 8.654317
+      },
+      {
+        "code": "D",
+        "name": "Entity B/C integration",
+        "exits_2y": 83,
+        "cost_m": 6.418988
+      },
+      {
+        "code": "E",
+        "name": "Risk & Compliance",
+        "exits_2y": 66,
+        "cost_m": 5.887376
+      }
+    ],
+    "union_exits_2y": 193,
+    "union_cost_m": 15.78807,
+    "union_share_pct": 57.358714,
+    "residual_exits_2y": 148,
+    "residual_cost_m": 11.737076,
+    "hipo": {
+      "rate": 3.840938,
+      "other_rate": 1.142057,
+      "rr": 3.363176,
+      "low": 2.597059,
+      "high": 4.355292,
+      "compa": 0.88,
+      "other_compa": 0.95
+    },
+    "integration": {
+      "entity_b_first_year_rate": 2.649398,
+      "entity_c_first_year_rate": 4.531437,
+      "origin_first_year_rate": 3.035277,
+      "pulse_2026": 16.145966,
+      "pulse_cost_m": 2.460401
+    },
+    "rc": {
+      "senior_rate": 4.225181,
+      "senior_exits": 5,
+      "confidence_low": -0.240833,
+      "confidence_high": -0.130116,
+      "waves": 5
+    }
+  },
+  "interventions": [
+    {
+      "code": "A",
+      "name": "Blanket HiPo pay fix",
+      "status": "Rejected",
+      "problem": "HiPos sit at 0.88 compa-ratio versus 0.95 for others, but pay is not a proven causal trigger.",
+      "action": "Raise all active HiPos to 0.95 compa-ratio.",
+      "owner": "Talent & Reward",
+      "cost_m": 13.096953,
+      "addressable_m": 9.013754,
+      "coverage_pct": 100,
+      "break_even_pct": 145.299655,
+      "boundary": "Annual cost exceeds the entire HiPo exposure; impossible to break even."
+    },
+    {
+      "code": "B",
+      "name": "Blanket promotion",
+      "status": "Rejected",
+      "problem": "Progression congestion is plausible, but eligible employees carried only about 27% of HiPo exit exposure.",
+      "action": "Promote every promotion-eligible active HiPo.",
+      "owner": "Talent & Reward",
+      "cost_m": 14.472216,
+      "addressable_m": 9.013754,
+      "coverage_pct": 26.666667,
+      "break_even_pct": 602.088867,
+      "boundary": "Most spending falls outside the reachable exposure; impossible to break even."
+    },
+    {
+      "code": "C",
+      "name": "HiPo career programme",
+      "short_name": "Career progression",
+      "status": "Pilot",
+      "target_segment": "HiPo",
+      "problem": "Recognition as a future leader is not matched by pay positioning and visible progression.",
+      "evidence": "HiPo exit RR 3.36 (95% CI 2.60–4.36); A$8.7M historical exposure.",
+      "action": "Progression criteria, structured career conversations and 20 accelerated promotions per year.",
+      "owner": "Talent & Reward",
+      "cost_m": 1.753889,
+      "addressable_m": 9.013754,
+      "reachable_exits": 54.680462,
+      "break_even_pct": 19.457921,
+      "boundary": "The association is strong; programme efficacy is not yet causal evidence."
+    },
+    {
+      "code": "D",
+      "name": "Entity B milestone playbook",
+      "short_name": "Integration playbook",
+      "status": "Pilot",
+      "target_segment": "Entity_B/C",
+      "problem": "Integration-linked exits arrive around known milestones rather than as stable background churn.",
+      "evidence": "Finalized 2026 pulse assumption: 16.1 incremental exits, A$2.5M exposure.",
+      "action": "Role clarity, communications and retention conversations before the consolidation milestone.",
+      "owner": "Integration Programme",
+      "cost_m": 1.0,
+      "addressable_m": 2.460401,
+      "reachable_exits": 16.145966,
+      "break_even_pct": 40.643783,
+      "boundary": "A time-sensitive planning scenario; it is below break-even at 30% efficacy on a standalone basis."
+    },
+    {
+      "code": "E",
+      "name": "R&C FAR readiness",
+      "short_name": "FAR readiness",
+      "status": "Pilot",
+      "target_segment": "R&C",
+      "problem": "Senior R&C roles combine elevated exits with persistent uncertainty about role futures.",
+      "evidence": "L4+ rate 4.2/100 person-years from 5 exits; five below-firm survey waves.",
+      "action": "FAR readiness, accountability support, role clarity and market benchmarking.",
+      "owner": "CRO with HR",
+      "cost_m": 0.6,
+      "addressable_m": 2.692193,
+      "reachable_exits": 14.952429,
+      "break_even_pct": 22.286662,
+      "boundary": "Senior-rate evidence rests on five exits; triangulation, not sample size, supports the pilot."
+    }
+  ],
+  "scenario": {
+    "segments": [
+      {
+        "segment": "HiPo",
+        "active_headcount": 1029,
+        "expected_exits": 54.680462,
+        "severity_m": 0.164844,
+        "expected_cost_m": 9.013754
+      },
+      {
+        "segment": "Entity_B/C",
+        "active_headcount": 2311,
+        "expected_exits": 38.145966,
+        "severity_m": 0.152385,
+        "expected_cost_m": 5.812868
+      },
+      {
+        "segment": "R&C",
+        "active_headcount": 1280,
+        "expected_exits": 14.952429,
+        "severity_m": 0.180051,
+        "expected_cost_m": 2.692193
+      },
+      {
+        "segment": "base",
+        "active_headcount": 7383,
+        "expected_exits": 72.251264,
+        "severity_m": 0.158609,
+        "expected_cost_m": 11.459711
+      }
+    ],
+    "entity_baseline_exits": 22,
+    "entity_pulse_exits": 16.145966,
+    "expected_exits": 180.03012,
+    "expected_cost_m": 28.978526,
+    "efficacy_alpha": 3.5,
+    "efficacy_beta": 8.0,
+    "efficacy_mean_pct": 30.434783,
+    "simulations": 10000,
+    "reference": {
+      "NONE": {
+        "p05_m": 25.472836,
+        "median_m": 28.907707,
+        "p95_m": 32.495122,
+        "difference_m": 0.0,
+        "probability_lower_pct": null
+      },
+      "C": {
+        "p05_m": 24.107375,
+        "median_m": 27.976846,
+        "p95_m": 31.942996,
+        "difference_m": -0.93086,
+        "probability_lower_pct": 62.32
+      },
+      "D": {
+        "p05_m": 25.744094,
+        "median_m": 29.186826,
+        "p95_m": 32.841743,
+        "difference_m": 0.279119,
+        "probability_lower_pct": 45.89
+      },
+      "E": {
+        "p05_m": 25.282255,
+        "median_m": 28.692988,
+        "p95_m": 32.312477,
+        "difference_m": -0.214719,
+        "probability_lower_pct": 52.42
+      },
+      "C+D+E": {
+        "p05_m": 24.128188,
+        "median_m": 28.005969,
+        "p95_m": 31.891123,
+        "difference_m": -0.901737,
+        "probability_lower_pct": 61.49
+      }
+    },
+    "backtest": {
+      "predicted_total_2025": 200.737,
+      "actual_total_2025": 174,
+      "error_pct": 15.366092,
+      "segments": [
+        {
+          "segment": "HiPo",
+          "predicted": 56.830706,
+          "actual": 52
+        },
+        {
+          "segment": "Entity_B/C",
+          "predicted": 53.193154,
+          "actual": 37
+        },
+        {
+          "segment": "R&C",
+          "predicted": 14.407352,
+          "actual": 16
+        },
+        {
+          "segment": "base",
+          "predicted": 76.305789,
+          "actual": 69
+        }
+      ]
+    }
+  },
+  "hiring": {
+    "agency_hires_2y": 274,
+    "agency_hires_pa": 137.0,
+    "average_agency_fee": 22161.218978,
+    "direct_benchmark": 5500,
+    "fee_ratio": 4.029313,
+    "premium_pa_m": 2.282587,
+    "premium_per_hire": 16661.218978,
+    "matched_strata": 457,
+    "matched_employees": 5667,
+    "agency_matched_early_pct": 0.561427,
+    "direct_matched_early_pct": 0.151573,
+    "agency_matched_days": 52.463672,
+    "direct_matched_days": 51.596059,
+    "shift_savings": [
+      {
+        "shift_pct": 25,
+        "hires_shifted": 34.25,
+        "gross_savings_m": 0.570647
+      },
+      {
+        "shift_pct": 50,
+        "hires_shifted": 68.5,
+        "gross_savings_m": 1.141293
+      },
+      {
+        "shift_pct": 75,
+        "hires_shifted": 102.75,
+        "gross_savings_m": 1.71194
+      }
+    ]
+  },
+  "radar": {
+    "senior_active_hipos": 119
+  },
+  "decisions_not_modelled": [
+    {
+      "decision": "Fix the measurement rule",
+      "reason": "A prerequisite that improves visibility; it does not itself prevent exits."
+    },
+    {
+      "decision": "Run the senior HiPo Radar",
+      "reason": "Review 119 senior active HiPos quarterly as a value-based operating list; do not turn it into a predictive score or publish named data."
+    },
+    {
+      "decision": "Do not build employee flight-risk scores",
+      "reason": "Engagement adds no usable individual warning for the target population."
+    },
+    {
+      "decision": "Do not fund residual churn",
+      "reason": "The residual A$11.7M has no shared observed mechanism."
+    },
+    {
+      "decision": "Re-base disengagement",
+      "reason": "The 15% productivity multiplier is roughly 25× the observed goal-score gap."
+    },
+    {
+      "decision": "Treat direct sourcing separately",
+      "reason": "It is a hiring-cost lever, not part of the retention scenario."
+    }
+  ]
+}
