@@ -652,80 +652,9 @@ The public repository contains aggregate evidence only. It does not contain:
 * reviewer IDs; or
 * a named Radar list.
 
-The snapshot is fingerprinted to the finalized notebook, and the rebuild process runs reconciliation checks before replacing the public dashboard data.
 
 ---
 
-## Run locally
-
-### Windows
-
-The easiest option is to double-click:
-
-```text
-start_dashboard.bat
-```
-
-### Git Bash
-
-```bash
-cd /c/path/to/Accenture_Dashboard
-python -m venv .venv
-source .venv/Scripts/activate
-python -m pip install -r requirements.txt
-python -m streamlit run app.py
-```
-
-### PowerShell
-
-```powershell
-cd C:\path\to\Accenture_Dashboard
-python -m venv .venv
-.\.venv\Scripts\Activate.ps1
-python -m pip install -r requirements.txt
-python -m streamlit run app.py
-```
-
-If PowerShell blocks activation:
-
-```powershell
-.\.venv\Scripts\python.exe -m pip install -r requirements.txt
-.\.venv\Scripts\python.exe -m streamlit run app.py
-```
-
----
-
-## Deploy with Streamlit Community Cloud
-
-1. Upload the contents of this repository to GitHub.
-2. Do not upload the four original CSVs or the notebook.
-3. Open Streamlit Community Cloud.
-4. Select this repository and the `main` branch.
-5. Set the main file path to `app.py`.
-6. In Advanced settings, select **Python 3.12**.
-7. Deploy. No secrets are required.
-8. Test the public link on desktop and mobile before sharing it.
-
----
-
-## Verification
-
-Run:
-
-```bash
-python -m unittest discover -s tests -v
-```
-
-The checks cover:
-
-* finalized headline figures;
-* authoritative notebook fingerprint;
-* finalized scenario outputs;
-* all eight C/D/E combinations;
-* ordered uncertainty intervals; and
-* absence of row-level identifier fields from the public snapshot.
-
----
 
 ## Thirty-second walkthrough
 
